@@ -1,0 +1,19 @@
+<div class="layout-menu-container">
+    <div class="">
+        <p-avatar image="assets/avatar.png" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+        <span >Administrateur</span>
+        <div class="status">
+            <i class="pi pi-circle-fill" style="color: green; font-size: small;"></i>
+            <span class="online m-2">Online</span>
+        </div>
+    </div>
+    <ul class="layout-menu" role="menu" (keydown)="onKeydown($event)">
+        <li app-menuitem class="layout-menuitem-category" *ngFor="let item of model; let i = index;" [item]="item" [index]="i" [root]="true" role="none">
+            <div class="layout-menuitem-root-text" [attr.aria-label]="item.label">{{item.label}}</div>
+            <ul role="menu">
+                <li app-menuitem *ngFor="let child of item.items" [item]="child" [index]="i" role="none"></li>
+            </ul>
+        </li>
+        
+    </ul>
+</div>
