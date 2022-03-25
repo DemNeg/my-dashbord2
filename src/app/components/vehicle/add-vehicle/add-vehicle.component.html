@@ -1,0 +1,82 @@
+<div class="card">
+    <h5>ADD VEHICLE</h5>
+    <p-tabView orientation="left">
+        <p-tabPanel header="BASIC" class="line-height-3 m-0">
+            <div class="col-12 "> 
+                <div class="card p-fluid">
+                    <div class="p-formgrid grid">
+                        <div class="field col">
+                            <label htmlFor="state">State</label>
+                            <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="selectedState"></p-dropdown>
+                        </div>
+                        <div class="field col">
+                            <label htmlFor="email2">Registration Name</label>
+                            <input pInputText id="email2" type="text" />
+                        </div>
+                    </div>
+                    <div class="p-formgrid grid">
+                        <div class="field col">
+                            <label htmlFor="name2">Vehicle Name</label>
+                            <input pInputText id="name2" type="text" />
+                        </div>
+                        <div class="field col">
+                            <label htmlFor="email2">Engine Number</label>
+                            <input pInputText id="email2" type="text" />
+                        </div>
+                    </div>
+                    <div class="p-formgrid grid">
+                        <div class="field col">
+                            <label htmlFor="name2">Make/Model</label>
+                            <input pInputText id="name2" type="text" />
+                        </div>
+                        <div class="field col">
+                            <label htmlFor="email2">Chassis Number</label>
+                            <input pInputText id="email2" type="text" />
+                        </div>
+                    </div>
+                    <div class="p-formgrid grid">
+                        <div class="field col">
+                            <label htmlFor="name2">Year of Manufacture</label>
+                            <input pInputText id="name2" type="text" />
+                        </div>
+                        <div class="field col">
+                            <label htmlFor="email2">Fuel Type</label>
+                            <input pInputText id="email2" type="text" />
+                        </div>
+                    </div>
+                    <div class="p-formgrid grid">
+                        <div class="field col">
+                            <label htmlFor="name2">Vehicle Image</label>
+                            <p-fileUpload mode="basic" name="demo[]" url="./upload.php"
+                             accept="image/*"  (onUpload)="onUpload($event)" chooseLabel="Browse"></p-fileUpload>
+                        </div>
+                        <div class="field col">
+                            <label htmlFor="email2">Fuel Measurement In</label>
+                            <input pInputText id="email2" type="text" />
+                        </div>
+                    </div>
+                    <div class="p-formgrid grid">
+                        <div class="field col">
+                            <label htmlFor="name2">Status</label>
+                            <input pInputText id="name2" type="text" />
+                        </div>
+                        <div class="field col">
+                            <label htmlFor="email2">Track Usage As </label>
+                            <input pInputText id="email2" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="ADVANCE" class="line-height-3 m-0">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+            totam rem aperiam, eaque
+            ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+            enim ipsam voluptatem quia
+            voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt.
+            Consectetur, adipisci velit, sed quia non numquam eius modi.
+        </p-tabPanel>
+        
+    </p-tabView>
+</div>
