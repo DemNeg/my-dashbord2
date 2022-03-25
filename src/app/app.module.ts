@@ -8,6 +8,11 @@ import { RippleModule } from 'primeng/ripple';
 import { PasswordModule } from 'primeng/password';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
+import {ButtonModule} from 'primeng/button';
+import {TabViewModule} from 'primeng/tabview';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+import { FileUploadModule } from 'primeng/fileupload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashbordComponent } from './components/dashbord/dashbord.component';
 import { LoginComponent } from './components/login/login.component';
+import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,8 @@ import { LoginComponent } from './components/login/login.component';
     MainComponent,
     FooterComponent,
     DashbordComponent,
-    LoginComponent
+    LoginComponent,
+    AddVehicleComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +50,11 @@ import { LoginComponent } from './components/login/login.component';
     PasswordModule,
     CheckboxModule,
     FormsModule,
+    ButtonModule,
+    TabViewModule,
+    InputTextModule,
+    DropdownModule,
+    FileUploadModule,
     
   ],
   providers: [],
