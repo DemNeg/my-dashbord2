@@ -1,0 +1,96 @@
+<div class="grid">
+    <div class="col-12">
+        <p-toast></p-toast>
+        <p-toolbar styleClass="mb-4">
+            <ng-template pTemplate="left">
+                <div class="my-2">
+                    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+                    <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedVehicles || !selectedVehicles.length"></button>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="right">
+                <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
+                <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help" (click)="dt.exportCSV()"></button>
+            </ng-template>
+        </p-toolbar>
+        <div class="card">
+            <p-table #dt [value]="vehicles" [columns]="cols" responsiveLayout="scroll" [rows]="5" [globalFilterFields]="['vehicleName','model','fuelType','status','yearOfManufacturer','registrationNumber']" 
+            [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,15]" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" 
+            [(selection)]="selectedVehicles" selectionMode="multiple" [rowHover]="true" dataKey="id">
+                
+            <ng-template pTemplate="caption">
+                    <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
+                        <h5 class="m-0">Manage Vehicles</h5>
+                        <span class="block mt-2 md:mt-0 p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Search..." />
+                        </span>
+                    </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 3rem">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+                    <th pSortableColumn="vehicleName">vehicle Name <p-sortIcon field="vehicleName"></p-sortIcon></th>
+                    <th>Image</th>
+                    <th pSortableColumn="model">Model <p-sortIcon field="model"></p-sortIcon></th>
+                    <th pSortableColumn="fuelType">Fuel Type <p-sortIcon field="fuelType"></p-sortIcon></th>
+                    <th pSortableColumn="yearOfManufacturer">Year of Manufacture <p-sortIcon field="yearOfManufacturer"></p-sortIcon></th>
+                    <th pSortableColumn="registrationNumber">Registration Number <p-sortIcon field="registrationNumber"></p-sortIcon></th>
+                    <th pSortableColumn="state">State <p-sortIcon field="state"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-vehicle>
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="vehicle"></p-tableCheckbox>
+                        </td>
+                        <td style="width: 9%; min-width: 5rem;"><span class="p-column-title">ID</span>
+                            {{vehicle.id}}</td>
+                        <td style="width: 12%; min-width: 5rem;">{{vehicle.vehicleName}}</td>
+                        <td style="width: 15%; min-width: 7rem;">
+                            <img src="assets/demo/images/vehicle/{{vehicle.image}}" class="shadow-4" alt="{{vehicle.name}}" width="100">
+                        </td>
+                        <td style="width: 12%; min-width: 7rem;">{{vehicle.model}}</td>
+                        <td style="width: 12%; min-width: 8rem;">{{vehicle.fuelType}}</td>
+                        <td style="width: 12%; min-width: 8rem;">{{vehicle.yearOfManufacturer}}</td>
+                        <td style="width: 12%; min-width: 8rem;">{{vehicle.registrationNumber}}</td>
+                        <td style="width: 12%; min-width: 8rem;">{{vehicle.state}}</td>
+                        <td>
+                            <div class="flex">
+                                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editVehicle(vehicle)"></button>
+                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteVehicle(vehicle)"></button>
+                            </div>
+                        </td>
+                    </tr>
+            </ng-template>
+            </p-table>
+        </div>
+        <p-dialog [(visible)]="deleteVehicleDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+            <div class="flex align-items-center justify-content-center">
+                <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+                <span *ngIf="vehicle">Are you sure you want to delete <b>{{vehicle.vehicleName}}</b>?</span>
+            </div>
+            <ng-template pTemplate="footer">
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No" (click)="deleteVehicleDialog = false"></button>
+                <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes" (click)="confirmDelete()"></button>
+            </ng-template>
+        </p-dialog>
+
+        <p-dialog [(visible)]="deleteProductsDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+            <div class="flex align-items-center justify-content-center">
+                <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+                <span>Are you sure you want to delete selected vehicles?</span>
+            </div>
+            <ng-template pTemplate="footer">
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No" (click)="deleteProductsDialog = false"></button>
+                <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes" (click)="confirmDeleteSelected()"></button>
+            </ng-template>
+        </p-dialog>
+
+    </div>
+</div>
+
