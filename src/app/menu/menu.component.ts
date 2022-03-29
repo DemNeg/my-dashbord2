@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit {
           label: 'Vehicles',
           items: [
               {label: 'Add Vehicles', icon: 'pi pi-fw pi-plus', routerLink: ['/addVehicle']},
-              {label: 'Vehicles', icon: 'pi pi pi-fw pi-car', routerLink: ['/uikit/input']},
+              {label: 'Vehicles', icon: 'pi pi pi-fw pi-car', routerLink: ['/listVehicles']},
               {label: 'Assignment New Vehicles', icon: 'pi pi pi-fw pi-plus-circle', routerLink: ['/uikit/floatlabel']},
               {label: 'Assignment history', icon: 'pi pi-fw pi pi-fw pi-history', routerLink: ['/uikit/invalidstate']},
               
