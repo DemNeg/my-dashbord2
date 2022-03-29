@@ -1,0 +1,62 @@
+{
+    "data":[
+        {
+            "id": "1",
+            "model": "SEDAN",
+            "fuelType": "Diesel",
+            "yearOfManufacturer":"2015",
+            "registrationNumber": "125421",
+            "image":"1.jpg",
+            "state":"Inactive",
+            "vehicleName":"Nissan Versa"
+        },
+        {
+            "id": "2",
+            "model": "COUPE",
+            "fuelType": "Gasoline",
+            "yearOfManufacturer":"2009",
+            "registrationNumber": "125010",
+            "image":"2.jpg",
+            "state":"Active",
+            "vehicleName":" Audi A5"
+        },
+        {
+            "id": "3",
+            "model": "SPORTS CAR",
+            "fuelType": "Diesel",
+            "yearOfManufacturer":"2011",
+            "registrationNumber": "155461",
+            "image":"3.jpg",
+            "state":"Active",
+            "vehicleName":"Porsche 911"
+        },
+        {
+            "id": "4",
+            "model": "STATION WAGON",
+            "fuelType": "Compressed Natural gas",
+            "yearOfManufacturer":"2010",
+            "registrationNumber": "124210",
+            "image":"4.jpg",
+            "state":"Sold",
+            "vehicleName":"Subaru Outback"
+        },{
+            "id": "5",
+            "model": "HATCHBACK",
+            "fuelType": "Propane",
+            "yearOfManufacturer":"2013",
+            "registrationNumber": "851421",
+            "image":"5.jpg",
+            "state":"Inactive",
+            "vehicleName":"Kia Stinger"
+        },{
+            "id": "6",
+            "model": "CONVERTIBLE",
+            "fuelType": "Gasoline",
+            "yearOfManufacturer":"2022",
+            "registrationNumber": "152421",
+            "image":"6.jpg",
+            "state":"Sold",
+            "vehicleName":"Mazda MX-5 Miata RF"
+        }
+    ]
+}
