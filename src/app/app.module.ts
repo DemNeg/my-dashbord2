@@ -13,6 +13,11 @@ import {TabViewModule} from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
+import {CalendarModule} from 'primeng/calendar';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import {ToastModule} from 'primeng/toast';
+import {ToolbarModule} from 'primeng/toolbar';
+import {DialogModule} from 'primeng/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashbordComponent } from './components/dashbord/dashbord.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicle.component';
+import { ListVehicleComponent } from './components/vehicle/list-vehicle/list-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,8 @@ import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicl
     FooterComponent,
     DashbordComponent,
     LoginComponent,
-    AddVehicleComponent
+    AddVehicleComponent,
+    ListVehicleComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,12 @@ import { AddVehicleComponent } from './components/vehicle/add-vehicle/add-vehicl
     InputTextModule,
     DropdownModule,
     FileUploadModule,
+    CalendarModule,
+    InputSwitchModule,
+    HttpClientModule,
+    ToastModule,
+    ToolbarModule,
+    DialogModule
     
   ],
   providers: [],
